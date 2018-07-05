@@ -14,7 +14,7 @@
         </Menu>
         <ScrollViewer Margin="0,21,0,0">
             <WrapPanel Name="WrapPanelTreenit" Width="auto" Height="auto">
-                <local:Treeni/>
+                <local:Treeni />
             </WrapPanel>
         </ScrollViewer>
     </Grid>

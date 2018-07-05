@@ -66,6 +66,5 @@ namespace Viikkotehtava4
             e.CanExecute = true;
         }
 
-
     }
 }

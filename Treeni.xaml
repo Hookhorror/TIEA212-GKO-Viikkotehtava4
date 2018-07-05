@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Viikkotehtava4"
+             xmlns:local="clr-namespace:Viikkotehtava4"             
              mc:Ignorable="d" Height="auto" Width="auto" x:Name="TreeniKomponentti">
     <StackPanel HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="5">
         <Grid Height="auto">
@@ -11,18 +11,18 @@
             <Label x:Name="labelAika" Content="Aika (h)" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textBoxMatka" HorizontalAlignment="Left" Height="23" Margin="70,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
                 <TextBox.Text>
-                    <Binding ElementName="TreeniKomponentti" Mode="TwoWay" Path="Matka" UpdateSourceTrigger="PropertyChanged" >
+                    <Binding ElementName="TreeniKomponentti" Mode="OneWayToSource" Path="Matka" UpdateSourceTrigger="PropertyChanged" >
                         <Binding.ValidationRules>
-                            <ExceptionValidationRule />
+                            <local:MatkaVirheentarkistus Min="0" Max="1000"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
             </TextBox>
             <TextBox x:Name="textBoxAika" HorizontalAlignment="Left" Height="23" Margin="70,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
                 <TextBox.Text>
-                    <Binding ElementName="TreeniKomponentti" Mode="TwoWay" Path="Aika" UpdateSourceTrigger="PropertyChanged">
+                    <Binding ElementName="TreeniKomponentti" Mode="OneWayToSource" Path="Aika" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <ExceptionValidationRule />
+                            <local:AikaVirheentarkistus Min="00:00:01" Max="23:59:59" />
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>    
